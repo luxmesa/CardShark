@@ -8,28 +8,24 @@
 
 #import "Hand.h"
 
-@implementation Hand{
-    NSMutableArray *cards;
-}
+@implementation Hand
+
+NSArray *_cards;
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    cards = [[NSMutableArray alloc] init];
-    for(int i = 0;i < 5;i++)
-    {
-        [cards addObject:[[CardCollectionViewCell alloc] initWithCardValue:i]];
-        [cards[i] setIsValid:NO];
-    }
+    _cards = @[@1, @2, @3, @4, @5];
+    
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [cards count];
+    return 5;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell setIsValid:[cards[indexPath.row] isValid]];
-    [cell setCardValue:[cards[indexPath.row] cardValue]];
+    [cell setCardValue:[_cards[indexPath.row] integerValue]];
+    [cell setUpGestures];
     
     return cell;
 }
@@ -37,19 +33,14 @@
 -(long long)getHandCode {
     long long int hand = 0;
     long long int mask;
-    for(int i = 0;i < [cards count];i++) {
-        mask = 1<<[cards[i] cardValue];
+    for(int i = 0;i < 5;i++) {
+        mask = 1<<[_cards[i] integerValue];
         hand = hand | mask;
     }
     return hand;
 }
 
 -(void)setInvalid:(long long)mark {
-    long long mask;
-    for(int i = 0;i < [cards count];i++) {
-        mask = 1<<[cards[i] cardValue];
-        [cards[i] setIsValid:(mark & mask) == 0];
-    }
 }
 
 @end

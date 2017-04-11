@@ -12,6 +12,8 @@
 		10CB5E061E9AB22000B35427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CB5E041E9AB22000B35427 /* Main.storyboard */; };
 		10CB5E081E9AB22000B35427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CB5E071E9AB22000B35427 /* Assets.xcassets */; };
 		10CB5E0B1E9AB22000B35427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CB5E091E9AB22000B35427 /* LaunchScreen.storyboard */; };
+		10EDCA3F1E9B16C000E3CA94 /* PayoutTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EDCA3E1E9B16C000E3CA94 /* PayoutTable.m */; };
+		10EDCA451E9B28D400E3CA94 /* PayoutTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EDCA441E9B28D400E3CA94 /* PayoutTableCell.m */; };
 		10F3E8341E9AD69500799048 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8331E9AD69500799048 /* Hand.m */; };
 		10F3E8371E9AD81400799048 /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +27,10 @@
 		10CB5E071E9AB22000B35427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10CB5E0A1E9AB22000B35427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10CB5E0C1E9AB22000B35427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10EDCA3D1E9B16C000E3CA94 /* PayoutTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayoutTable.h; sourceTree = "<group>"; };
+		10EDCA3E1E9B16C000E3CA94 /* PayoutTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayoutTable.m; sourceTree = "<group>"; };
+		10EDCA431E9B28D400E3CA94 /* PayoutTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayoutTableCell.h; sourceTree = "<group>"; };
+		10EDCA441E9B28D400E3CA94 /* PayoutTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayoutTableCell.m; sourceTree = "<group>"; };
 		10F3E8321E9AD69500799048 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
 		10F3E8331E9AD69500799048 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
 		10F3E8351E9AD81400799048 /* CardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCollectionViewCell.h; sourceTree = "<group>"; };
@@ -71,6 +77,10 @@
 				10CB5E0C1E9AB22000B35427 /* Info.plist */,
 				10CB5DFB1E9AB22000B35427 /* Supporting Files */,
 				10F3E8321E9AD69500799048 /* Hand.h */,
+				10EDCA3E1E9B16C000E3CA94 /* PayoutTable.m */,
+				10EDCA431E9B28D400E3CA94 /* PayoutTableCell.h */,
+				10EDCA441E9B28D400E3CA94 /* PayoutTableCell.m */,
+				10EDCA3D1E9B16C000E3CA94 /* PayoutTable.h */,
 				10F3E8331E9AD69500799048 /* Hand.m */,
 			);
 			path = "Card Shark";
@@ -157,7 +167,9 @@
 			files = (
 				10F3E8341E9AD69500799048 /* Hand.m in Sources */,
 				10F3E8371E9AD81400799048 /* CardCollectionViewCell.m in Sources */,
+				10EDCA451E9B28D400E3CA94 /* PayoutTableCell.m in Sources */,
 				10CB5E001E9AB22000B35427 /* AppDelegate.m in Sources */,
+				10EDCA3F1E9B16C000E3CA94 /* PayoutTable.m in Sources */,
 				10CB5DFD1E9AB22000B35427 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

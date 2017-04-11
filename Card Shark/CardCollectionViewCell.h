@@ -15,7 +15,6 @@
 
 -(BOOL) isValid;
 -(void) setIsValid:(BOOL) value;
-
--(instancetype) initWithCardValue:(NSInteger)value;
+-(void) setUpGestures;
 
 @end
