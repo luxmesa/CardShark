@@ -14,8 +14,9 @@
 @end
 
 @implementation CardCollectionViewCell{
-    NSInteger _cardValue;
-    BOOL _isValid;
+    NSInteger _index;
+    NSMutableArray *_cardValues;
+
     UISwipeGestureRecognizer *_up;
     UISwipeGestureRecognizer *_down;
     UISwipeGestureRecognizer *_left;
@@ -90,23 +91,45 @@
 }
 
 -(NSInteger)cardValue {
-    return _cardValue;}
+    if(_cardValues == nil)
+        return 0;
+    return [_cardValues[_index] integerValue];}
 
 -(void) setCardValue:(NSInteger)value {
-    _cardValue = value;
-    
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Card%li", self.cardValue]];
-    
-    self.image.image = image;
+    _cardValues[_index] = [NSNumber numberWithInteger:value];
+    if(self.updateCard != nil)
+        self.updateCard();
+    [self updateValue];
 }
 
--(BOOL)isValid {
-    return _isValid;
+-(NSInteger) index {
+    return _index;
+}
+
+-(void) setIndex:(NSInteger)value {
+    _index = value;
+    if(self.cardValues != nil) {
+        [self updateValue];
+    }
 }
 
 -(void) setIsValid:(BOOL)value {
-    _isValid = value;
-    self.backgroundColor = _isValid ? [UIColor clearColor] : [UIColor redColor];
+    self.backgroundColor = value ? [UIColor clearColor] : [UIColor redColor];
+}
+
+-(NSMutableArray*)cardValues {
+    return _cardValues;
+}
+
+-(void)setCardValues:(NSMutableArray *)tableValues {
+    _cardValues = tableValues;
+    [self updateValue];
+}
+
+-(void)updateValue {
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Card%li", self.cardValue]];
+    
+    self.image.image = image;
 }
 
 @end

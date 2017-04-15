@@ -33,7 +33,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    Hand *hand = [segue destinationViewController];
+    HandViewController *hand = [segue destinationViewController];
     [hand setTableValues:_tableValues];
 }
 

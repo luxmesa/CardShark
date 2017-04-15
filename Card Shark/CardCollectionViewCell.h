@@ -10,10 +10,19 @@
 
 @interface CardCollectionViewCell : UICollectionViewCell
 
+@property void (^updateCard)(void);
+
 -(NSInteger) cardValue;
 -(void) setCardValue:(NSInteger)value;
 
--(BOOL) isValid;
+-(NSInteger) index;
+
+-(void) setIndex:(NSInteger)value;
+
+-(NSMutableArray*)cardValues;
+
+-(void)setCardValues:(NSMutableArray *)tableValues;
+
 -(void) setIsValid:(BOOL) value;
 -(void) setUpGestures;
 

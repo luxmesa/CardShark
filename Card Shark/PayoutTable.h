@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PayoutTableCell.h"
-#import "Hand.h"
+#import "HandViewController.h"
 
 @interface PayoutTable : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

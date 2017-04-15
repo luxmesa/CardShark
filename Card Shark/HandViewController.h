@@ -11,9 +11,11 @@
 #import "CardCollectionViewCell.h"
 #import "PayoutTable.h"
 
-@interface Hand : UIViewController <UICollectionViewDataSource>
+@interface HandViewController : UIViewController <UICollectionViewDataSource>
 
 -(long long int) getHandCode;
+-(void)handUpdated;
+-(void)setInvalid:(long long)mark;
 
 -(NSMutableArray*)tableValues;
 -(void)setTableValues:(NSMutableArray*)value;

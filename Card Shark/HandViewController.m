@@ -6,17 +6,24 @@
 //  Copyright © 2017 Samuel Vercauteren. All rights reserved.
 //
 
-#import "Hand.h"
+#import "HandViewController.h"
 
-@implementation Hand {
+@interface HandViewController ()
 
-    NSArray *_cards;
+@property (weak, nonatomic) IBOutlet UICollectionView *handCollectionView;
+
+@end
+
+@implementation HandViewController {
+
+    NSMutableArray *_cards;
     NSMutableArray *_tableValues;
+    NSInteger _valid;
 }
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _cards = @[@1, @2, @3, @4, @5];
+    _cards = [[NSMutableArray alloc] initWithObjects: @1, @2, @3, @4, @5, nil];
     _tableValues = [[NSMutableArray alloc] initWithObjects: @1, @2, @3, @4, @6, @9, @25, @50, @250, nil];
     
 }
@@ -27,7 +34,10 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell setCardValue:[_cards[indexPath.row] integerValue]];
+    [cell setIsValid:(_valid & 1<<[_cards[indexPath.row] integerValue]) == 0];
+    [cell setCardValues:_cards];
+    [cell setIndex:indexPath.row];
+    [cell setUpdateCard:^ {[self handUpdated];}];
     [cell setUpGestures];
     
     return cell;
@@ -43,7 +53,25 @@
     return hand;
 }
 
+-(void)handUpdated {
+    long long mark = 0;
+    for(int i = 0;i < 5;i++)
+    {
+        for(int j = 0;j < 5;j++)
+        {
+            if(i != j && [_cards[i] integerValue] == [_cards[j] integerValue])
+            {
+                mark = mark | 1<<[_cards[i] integerValue];
+                
+            }
+        }
+    }
+    [self setInvalid:mark];
+}
+
 -(void)setInvalid:(long long)mark {
+    _valid = mark;
+    [self.handCollectionView reloadData];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
