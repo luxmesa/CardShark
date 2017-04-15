@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PayoutTableCell.h"
+#import "Hand.h"
 
 @interface PayoutTable : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property NSMutableArray *tableValues;
 
 @end

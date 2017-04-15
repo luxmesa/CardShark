@@ -15,10 +15,11 @@
 @end
 
 @implementation PayoutTableCell {
+    NSInteger _index;
+    NSMutableArray *_tableValues;
 }
 
 static NSArray *_typeNames;
-NSInteger _index;
 
 +(void) initialize{
     _typeNames = @[@"Pair Jacks or Better", @"Two Pair", @"Three of a Kind", @"Straight", @"Flush", @"Full House", @"Four of a Kind", @"Straight Flush", @"Royal Flush"];
@@ -32,18 +33,27 @@ NSInteger _index;
 -(void) setIndex:(NSInteger)value {
     _index = value;
     self.textLabel.text = _typeNames[value];
+    if(self.tableValues != nil) {
+        [self updateValue];
+    }
 }
 
--(instancetype) initWithIndex:(NSInteger)value {
-    self = [super init];
-    if(self) {
-        [self setIndex:value];
-    }
-    return self;
+-(NSMutableArray*)tableValues {
+    return _tableValues;
+}
+
+-(void)setTableValues:(NSMutableArray *)tableValues {
+    _tableValues = tableValues;
+    [self updateValue];
+}
+
+-(void)updateValue {
+    self.valueField.text = [self.tableValues[self.index] stringValue];
 }
 
 - (IBAction)ValueChanged:(id)sender {
-    // there is some model that represents this table.  For now, we do nothing
+    NSInteger integer = [self.valueField.text integerValue];
+    self.tableValues[self.index] = [NSNumber numberWithInteger:integer];
 }
 
 @end

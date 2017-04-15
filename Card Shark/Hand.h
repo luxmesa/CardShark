@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CardCollectionViewCell.h"
+#import "PayoutTable.h"
 
 @interface Hand : UIViewController <UICollectionViewDataSource>
 
 -(long long int) getHandCode;
 
--(void) setInvalid:(long long int)mark;
+-(NSMutableArray*)tableValues;
+-(void)setTableValues:(NSMutableArray*)value;
 
 @end

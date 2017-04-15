@@ -8,13 +8,16 @@
 
 #import "Hand.h"
 
-@implementation Hand
+@implementation Hand {
 
-NSArray *_cards;
+    NSArray *_cards;
+    NSMutableArray *_tableValues;
+}
 
 -(void)viewDidLoad {
     [super viewDidLoad];
     _cards = @[@1, @2, @3, @4, @5];
+    _tableValues = [[NSMutableArray alloc] initWithObjects: @1, @2, @3, @4, @6, @9, @25, @50, @250, nil];
     
 }
 
@@ -42,5 +45,21 @@ NSArray *_cards;
 
 -(void)setInvalid:(long long)mark {
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PayoutTable *table = [segue destinationViewController];
+    
+    [table setTableValues:_tableValues];
+}
+
+-(void)setTableValues:(NSMutableArray *)tableValues {
+    _tableValues = tableValues;
+}
+
+-(NSMutableArray*)tableValues {
+    return _tableValues;
+}
+
+
 
 @end

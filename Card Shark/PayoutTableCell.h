@@ -12,6 +12,9 @@
 
 @property NSInteger index;
 
+-(void)setTableValues:(NSMutableArray *)tableValues;
+-(NSMutableArray*)tableValues;
+
 -(NSInteger) index;
 -(void) setIndex:(NSInteger)value;
 

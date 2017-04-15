@@ -19,12 +19,22 @@
     PayoutTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     [cell setIndex:indexPath.row];
+    [cell setTableValues:_tableValues];
     
     return cell;
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)DonePressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    Hand *hand = [segue destinationViewController];
+    [hand setTableValues:_tableValues];
 }
 
 @end
