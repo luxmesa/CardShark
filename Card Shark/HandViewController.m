@@ -19,12 +19,14 @@
     NSMutableArray *_cards;
     NSMutableArray *_tableValues;
     NSInteger _valid;
+    ExpectedPayoffCalculator *_calculator;
 }
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _cards = [[NSMutableArray alloc] initWithObjects: @1, @2, @3, @4, @5, nil];
+    _cards = [[NSMutableArray alloc] initWithObjects: @0, @1, @2, @3, @4, nil];
     _tableValues = [[NSMutableArray alloc] initWithObjects: @1, @2, @3, @4, @6, @9, @25, @50, @250, nil];
+    _calculator = [[ExpectedPayoffCalculator alloc] init];
     
 }
 
@@ -34,7 +36,7 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell setIsValid:(_valid & 1<<[_cards[indexPath.row] integerValue]) == 0];
+    [cell setIsValid:(_valid & 1LL<<[_cards[indexPath.row] integerValue]) == 0];
     [cell setCardValues:_cards];
     [cell setIndex:indexPath.row];
     [cell setUpdateCard:^ {[self handUpdated];}];
@@ -47,7 +49,7 @@
     long long int hand = 0;
     long long int mask;
     for(int i = 0;i < 5;i++) {
-        mask = 1<<[_cards[i] integerValue];
+        mask = 1LL<<[_cards[i] integerValue];
         hand = hand | mask;
     }
     return hand;
@@ -61,12 +63,16 @@
         {
             if(i != j && [_cards[i] integerValue] == [_cards[j] integerValue])
             {
-                mark = mark | 1<<[_cards[i] integerValue];
+                mark = mark | 1LL<<[_cards[i] integerValue];
                 
             }
         }
     }
     [self setInvalid:mark];
+}
+
+- (IBAction)CalculateHand:(id)sender {
+    [self setInvalid:[_calculator analyzeHand:_cards withTable:_tableValues]];
 }
 
 -(void)setInvalid:(long long)mark {

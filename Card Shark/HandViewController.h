@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "CardCollectionViewCell.h"
 #import "PayoutTable.h"
+#import "ExpectedPayoffCalculator.h"
 
 @interface HandViewController : UIViewController <UICollectionViewDataSource>
 

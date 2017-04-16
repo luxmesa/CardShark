@@ -17,6 +17,7 @@
 		10F3E8341E9AD69500799048 /* HandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8331E9AD69500799048 /* HandViewController.m */; };
 		10F3E8371E9AD81400799048 /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */; };
 		10FEFBAB1EA3F91E001EF09D /* results.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10FEFBAA1EA3F91E001EF09D /* results.plist */; };
+		10FEFBAF1EA3F9A1001EF09D /* ExpectedPayoffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FEFBAE1EA3F9A1001EF09D /* ExpectedPayoffCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		10F3E8351E9AD81400799048 /* CardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCollectionViewCell.h; sourceTree = "<group>"; };
 		10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCollectionViewCell.m; sourceTree = "<group>"; };
 		10FEFBAA1EA3F91E001EF09D /* results.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = results.plist; sourceTree = "<group>"; };
+		10FEFBAD1EA3F9A1001EF09D /* ExpectedPayoffCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectedPayoffCalculator.h; sourceTree = "<group>"; };
+		10FEFBAE1EA3F9A1001EF09D /* ExpectedPayoffCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectedPayoffCalculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,23 +91,25 @@
 		10CB5DFA1E9AB22000B35427 /* Card Shark */ = {
 			isa = PBXGroup;
 			children = (
-				107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */,
 				10CB5DFE1E9AB22000B35427 /* AppDelegate.h */,
 				10CB5DFF1E9AB22000B35427 /* AppDelegate.m */,
-				10CB5E041E9AB22000B35427 /* Main.storyboard */,
+				10CB5E071E9AB22000B35427 /* Assets.xcassets */,
 				10F3E8351E9AD81400799048 /* CardCollectionViewCell.h */,
 				10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */,
-				10CB5E071E9AB22000B35427 /* Assets.xcassets */,
-				10CB5E091E9AB22000B35427 /* LaunchScreen.storyboard */,
-				10CB5E0C1E9AB22000B35427 /* Info.plist */,
-				10FEFBAA1EA3F91E001EF09D /* results.plist */,
-				10CB5DFB1E9AB22000B35427 /* Supporting Files */,
+				10FEFBAD1EA3F9A1001EF09D /* ExpectedPayoffCalculator.h */,
+				10FEFBAE1EA3F9A1001EF09D /* ExpectedPayoffCalculator.m */,
+				107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */,
 				10F3E8321E9AD69500799048 /* HandViewController.h */,
+				10F3E8331E9AD69500799048 /* HandViewController.m */,
+				10CB5E0C1E9AB22000B35427 /* Info.plist */,
+				10CB5E091E9AB22000B35427 /* LaunchScreen.storyboard */,
+				10CB5E041E9AB22000B35427 /* Main.storyboard */,
+				10EDCA3D1E9B16C000E3CA94 /* PayoutTable.h */,
 				10EDCA3E1E9B16C000E3CA94 /* PayoutTable.m */,
 				10EDCA431E9B28D400E3CA94 /* PayoutTableCell.h */,
 				10EDCA441E9B28D400E3CA94 /* PayoutTableCell.m */,
-				10EDCA3D1E9B16C000E3CA94 /* PayoutTable.h */,
-				10F3E8331E9AD69500799048 /* HandViewController.m */,
+				10FEFBAA1EA3F91E001EF09D /* results.plist */,
+				10CB5DFB1E9AB22000B35427 /* Supporting Files */,
 			);
 			path = "Card Shark";
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FEFBAF1EA3F9A1001EF09D /* ExpectedPayoffCalculator.m in Sources */,
 				10F3E8341E9AD69500799048 /* HandViewController.m in Sources */,
 				10F3E8371E9AD81400799048 /* CardCollectionViewCell.m in Sources */,
 				10EDCA451E9B28D400E3CA94 /* PayoutTableCell.m in Sources */,
