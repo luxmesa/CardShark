@@ -16,9 +16,21 @@
 		10EDCA451E9B28D400E3CA94 /* PayoutTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EDCA441E9B28D400E3CA94 /* PayoutTableCell.m */; };
 		10F3E8341E9AD69500799048 /* HandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8331E9AD69500799048 /* HandViewController.m */; };
 		10F3E8371E9AD81400799048 /* CardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */; };
+		10FEFBAB1EA3F91E001EF09D /* results.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10FEFBAA1EA3F91E001EF09D /* results.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		107928271EA2962E00410B81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 107928191EA2962D00410B81;
+			remoteInfo = HandResultsGenerator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HandResultsGenerator.xcodeproj; path = HandResultsGenerator/HandResultsGenerator.xcodeproj; sourceTree = SOURCE_ROOT; };
 		10CB5DF81E9AB22000B35427 /* Card Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CB5DFC1E9AB22000B35427 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10CB5DFE1E9AB22000B35427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,6 +47,7 @@
 		10F3E8331E9AD69500799048 /* HandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandViewController.m; sourceTree = "<group>"; };
 		10F3E8351E9AD81400799048 /* CardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCollectionViewCell.h; sourceTree = "<group>"; };
 		10F3E8361E9AD81400799048 /* CardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCollectionViewCell.m; sourceTree = "<group>"; };
+		10FEFBAA1EA3F91E001EF09D /* results.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = results.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107928241EA2962D00410B81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				107928281EA2962E00410B81 /* HandResultsGenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		10CB5DEF1E9AB22000B35427 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +88,7 @@
 		10CB5DFA1E9AB22000B35427 /* Card Shark */ = {
 			isa = PBXGroup;
 			children = (
+				107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */,
 				10CB5DFE1E9AB22000B35427 /* AppDelegate.h */,
 				10CB5DFF1E9AB22000B35427 /* AppDelegate.m */,
 				10CB5E041E9AB22000B35427 /* Main.storyboard */,
@@ -75,6 +97,7 @@
 				10CB5E071E9AB22000B35427 /* Assets.xcassets */,
 				10CB5E091E9AB22000B35427 /* LaunchScreen.storyboard */,
 				10CB5E0C1E9AB22000B35427 /* Info.plist */,
+				10FEFBAA1EA3F91E001EF09D /* results.plist */,
 				10CB5DFB1E9AB22000B35427 /* Supporting Files */,
 				10F3E8321E9AD69500799048 /* HandViewController.h */,
 				10EDCA3E1E9B16C000E3CA94 /* PayoutTable.m */,
@@ -140,6 +163,12 @@
 			mainGroup = 10CB5DEF1E9AB22000B35427;
 			productRefGroup = 10CB5DF91E9AB22000B35427 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 107928241EA2962D00410B81 /* Products */;
+					ProjectRef = 107928231EA2962D00410B81 /* HandResultsGenerator.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				10CB5DF71E9AB22000B35427 /* Card Shark */,
@@ -147,12 +176,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		107928281EA2962E00410B81 /* HandResultsGenerator */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = HandResultsGenerator;
+			remoteRef = 107928271EA2962E00410B81 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		10CB5DF61E9AB22000B35427 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				10CB5E0B1E9AB22000B35427 /* LaunchScreen.storyboard in Resources */,
+				10FEFBAB1EA3F91E001EF09D /* results.plist in Resources */,
 				10CB5E081E9AB22000B35427 /* Assets.xcassets in Resources */,
 				10CB5E061E9AB22000B35427 /* Main.storyboard in Resources */,
 			);
